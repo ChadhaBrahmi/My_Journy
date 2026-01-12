@@ -3,24 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Blogs</title>
+  <title>My Notebooks</title>
 
   <style>
     :root {
-      --c: gainsboro; /* grid lines */
-      --d: 1em;       /* grid cell size */
-      --l: 1px;       /* line thickness */
-      --o: 0.5px;     /* computed */
+      --c: gainsboro;
+      --d: 1em;       
+      --l: 1px;       
+      --o: 0.5px;  
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
     }
 
     body {
-      margin: 0;
+      display: flex;
+      flex-direction: column;
       min-height: 100vh;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       color: #111;
 
       background:
-        /* horizontal & vertical lines */
         conic-gradient(
           from 90deg at var(--l) var(--l),
           transparent 25%,
@@ -29,7 +35,6 @@
         calc(-1 * var(--o)) calc(-1 * var(--o)) /
         var(--d) var(--d),
 
-        /* main diagonal */
         linear-gradient(
           45deg,
           transparent calc(50% - var(--o)),
@@ -38,7 +43,6 @@
         )
         0 0 / calc(2 * var(--d)) calc(2 * var(--d)),
 
-        /* secondary diagonal */
         linear-gradient(
           -45deg,
           transparent calc(50% - var(--o)),
@@ -49,9 +53,10 @@
     }
 
     .container {
-      max-width: 900px;
+      max-width: 1100px; 
       margin: 0 auto;
       padding: 4rem 1.5rem;
+      flex: 1; 
     }
 
     h1 {
@@ -61,7 +66,7 @@
 
     .blogs {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
     }
 
@@ -92,11 +97,11 @@
     }
 
     footer {
-      margin-top: 5rem;
       padding: 2rem 1rem;
       text-align: center;
       font-size: 0.9rem;
       color: #444;
+      background: transparent;
     }
 
     footer a {
@@ -108,15 +113,50 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .blogs {
+    grid-template-columns: 1fr; 
+    gap: 1rem;
+  }
+
+  .container {
+    padding: 3rem 1rem;
+  }
+
+  .blog {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  .blog h2 {
+    font-size: 1.1rem;
+  }
+
+  .blog p {
+    font-size: 0.9rem;
+  }
+}
+
   </style>
 </head>
 <body>
 
   <main class="container">
-    <h1>My Blogs</h1>
+    <h1>My Notebooks</h1>
 
     <section class="blogs">
-      
       <a class="blog" href="https://colab.research.google.com/drive/1bXSNfzitgEk8g54qd5NocZUBJyTcCl9b#scrollTo=TgRc74ATsmf7" target="_blank">
         <h2>!Awake</h2>
         <p>
@@ -124,28 +164,17 @@
         </p>
       </a>
 
-      
-      <a class="blog" href="https://colab.research.google.com/" target="_blank">
-        <h2>Learning ML From Scratch</h2>
+      <a class="blog" href="https://colab.research.google.com/drive/1J8DsFXrTUeleiZ84oZQuU1b6WuwLZLjZ#scrollTo=QV5kLq4nDLuh" target="_blank">
+        <h2>Linear Regression from Scratch</h2>
         <p>
-         
-        </p>
-      </a>
-
-    
-      <a class="blog" href="https://colab.research.google.com/" target="_blank">
-        <h2> AI Experiments</h2>
-        <p>
-         
+          Learning to fit a line to data and make predictions using Linear Regression from scratch.
         </p>
       </a>
     </section>
   </main>
 
   <footer>
-    <p> Made by<a href="https://chadha-brahmi.vercel.app/" target="_blank">
-      Brahmi Chadha
-    </a> </p>
+    <p>Made by <a href="https://chadha-brahmi.vercel.app/" target="_blank">Brahmi Chadha</a></p>
   </footer>
 
 </body>
