@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Blogs</title>
+
+  <style>
+    :root {
+      --c: gainsboro; /* grid lines */
+      --d: 1em;       /* grid cell size */
+      --l: 1px;       /* line thickness */
+      --o: 0.5px;     /* computed */
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #111;
+
+      background:
+        /* horizontal & vertical lines */
+        conic-gradient(
+          from 90deg at var(--l) var(--l),
+          transparent 25%,
+          var(--c) 0%
+        )
+        calc(-1 * var(--o)) calc(-1 * var(--o)) /
+        var(--d) var(--d),
+
+        /* main diagonal */
+        linear-gradient(
+          45deg,
+          transparent calc(50% - var(--o)),
+          var(--c) 0 calc(50% + var(--o)),
+          transparent 0
+        )
+        0 0 / calc(2 * var(--d)) calc(2 * var(--d)),
+
+        /* secondary diagonal */
+        linear-gradient(
+          -45deg,
+          transparent calc(50% - var(--o)),
+          var(--c) 0 calc(50% + var(--o)),
+          transparent 0
+        )
+        0 0 / calc(2 * var(--d)) calc(2 * var(--d));
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .blogs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .blog {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(4px);
+      border-radius: 14px;
+      padding: 1.4rem;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .blog:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .blog h2 {
+      font-size: 1.2rem;
+      margin: 0 0 0.5rem;
+    }
+
+    .blog p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #444;
+    }
+
+    footer {
+      margin-top: 5rem;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #444;
+    }
+
+    footer a {
+      color: inherit;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="container">
+    <h1>My Blogs</h1>
+
+    <section class="blogs">
+      
+      <a class="blog" href="https://colab.research.google.com/drive/1bXSNfzitgEk8g54qd5NocZUBJyTcCl9b#scrollTo=TgRc74ATsmf7" target="_blank">
+        <h2>!Awake</h2>
+        <p>
+          An AI experiment that turns short dream descriptions into full stories.
+        </p>
+      </a>
+
+      
+      <a class="blog" href="https://colab.research.google.com/" target="_blank">
+        <h2>Learning ML From Scratch</h2>
+        <p>
+         
+        </p>
+      </a>
+
+    
+      <a class="blog" href="https://colab.research.google.com/" target="_blank">
+        <h2> AI Experiments</h2>
+        <p>
+         
+        </p>
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <p> Made by<a href="https://chadha-brahmi.vercel.app/" target="_blank">
+      Brahmi Chadha
+    </a> </p>
+  </footer>
+
+</body>
+</html>
