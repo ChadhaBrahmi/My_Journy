@@ -3,160 +3,105 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="icon.png" />
+  <link rel="stylesheet" href="style.css">
   <title>My Notebooks</title>
 
-  <style>
-    :root {
-      --c: gainsboro;
-      --d: 1em;       
-      --l: 1px;       
-      --o: 0.5px;  
-    }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-    }
-
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      color: #111;
-
-      background:
-        conic-gradient(
-          from 90deg at var(--l) var(--l),
-          transparent 25%,
-          var(--c) 0%
-        )
-        calc(-1 * var(--o)) calc(-1 * var(--o)) /
-        var(--d) var(--d),
-
-        linear-gradient(
-          45deg,
-          transparent calc(50% - var(--o)),
-          var(--c) 0 calc(50% + var(--o)),
-          transparent 0
-        )
-        0 0 / calc(2 * var(--d)) calc(2 * var(--d)),
-
-        linear-gradient(
-          -45deg,
-          transparent calc(50% - var(--o)),
-          var(--c) 0 calc(50% + var(--o)),
-          transparent 0
-        )
-        0 0 / calc(2 * var(--d)) calc(2 * var(--d));
-    }
-
-    .container {
-      max-width: 1100px; 
-      margin: 0 auto;
-      padding: 4rem 1.5rem;
-      flex: 1; 
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .blogs {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .blog {
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(4px);
-      border-radius: 14px;
-      padding: 1.4rem;
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .blog:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    .blog h2 {
-      font-size: 1.2rem;
-      margin: 0 0 0.5rem;
-    }
-
-    .blog p {
-      font-size: 0.95rem;
-      line-height: 1.5;
-      color: #444;
-    }
-
-    footer {
-      padding: 2rem 1rem;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #444;
-      background: transparent;
-    }
-
-    footer a {
-      color: inherit;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2rem;
-    text-align: center;
-  }
-
-  .blogs {
-    grid-template-columns: 1fr; 
-    gap: 1rem;
-  }
-
-  .container {
-    padding: 3rem 1rem;
-  }
-
-  .blog {
-    padding: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.7rem;
-  }
-
-  .blog h2 {
-    font-size: 1.1rem;
-  }
-
-  .blog p {
-    font-size: 0.9rem;
-  }
-}
-
-  </style>
 </head>
 <body>
+ <nav class="floating-navbar">
+  <a href="#learning-path" class="nav-link">Learning Path</a>
+  <a href="#notebooks" class="nav-link">Notebooks</a>
+</nav>
+
+
 
   <main class="container">
-    <h1>My Notebooks</h1>
+<section id="learning-path" class="learning-path">
 
+  <div class="path-intro">
+    <h2>My Learning Path</h2>
+   
+  </div>
+
+  
+  <div class="phase-card">
+    <div class="phase-header">
+      <div class="phase-title">Phase One</div>
+      <div class="phase-status progress">In Progress</div>
+    </div>
+
+    <div class="topics">
+      <div class="topic unlocked">
+        Foundational Mathematics
+        <span class="unlocked">Unlocked</span>
+      </div>
+
+      <div class="topic progress">
+        Linear Algebra
+        <span class="progress">In Progress</span>
+      </div>
+
+      <div class="topic unlocked">
+        Mathematical Analysis I
+        <span class="unlocked">Unlocked</span>
+      </div>
+
+      <div class="topic progress">
+        Statistics
+        <span class="progress">In Progress</span>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="phase-card locked">
+    <div class="phase-header">
+      <div class="phase-title">Phase Two</div>
+      <div class="phase-status locked">Locked</div>
+    </div>
+
+    <div class="topics">
+      <div class="topic locked">Mathematical Analysis II <span class="locked">Locked</span></div>
+      <div class="topic locked">Probability <span class="locked">Locked</span></div>
+      <div class="topic locked">Statistical Inference <span class="locked">Locked</span></div>
+      <div class="topic locked">Mathematical Analysis III <span class="locked">Locked</span></div>
+    </div>
+  </div>
+
+  
+  <div class="phase-card locked">
+    <div class="phase-header">
+      <div class="phase-title">Phase Three</div>
+      <div class="phase-status locked">Locked</div>
+    </div>
+
+    <div class="topics">
+      <div class="topic locked">Data Mining <span class="locked">Locked</span></div>
+      <div class="topic locked">Stochastic Processes <span class="locked">Locked</span></div>
+      <div class="topic locked">Machine Learning <span class="locked">Locked</span></div>
+      <div class="topic locked">Numerical Methods & Optimization <span class="locked">Locked</span></div>
+      <div class="topic locked">Time Series Analysis <span class="locked">Locked</span></div>
+    </div>
+  </div>
+
+  
+  <div class="phase-card locked">
+    <div class="phase-header">
+      <div class="phase-title">Phase Four</div>
+      <div class="phase-status locked">Locked</div>
+    </div>
+
+    <div class="topics">
+      <div class="topic locked">Natural Language Processing (NLP) <span class="locked">Locked</span></div>
+      <div class="topic locked">Deep Learning <span class="locked">Locked</span></div>
+      <div class="topic locked">Computer Vision <span class="locked">Locked</span></div>
+      <div class="topic locked">Reinforcement Learning <span class="locked">Locked</span></div>
+    </div>
+  </div>
+
+</section>
+
+    <h1 id="notebooks">My Notebooks</h1>
     <section class="blogs">
       <a class="blog" href="https://colab.research.google.com/drive/1bXSNfzitgEk8g54qd5NocZUBJyTcCl9b#scrollTo=TgRc74ATsmf7" target="_blank">
         <h2>!Awake</h2>
@@ -181,3 +126,5 @@
 </body>
 </html>
 
+
+ 
